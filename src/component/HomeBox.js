@@ -1,38 +1,35 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import React from "react";
-import { smaillImage, background, mainImage } from "../assets/images"
+import { smaillImage, background, mainImage } from "../assets/assets"
 import CheckIcon from '@mui/icons-material/Check';
 import styled from "styled-components";
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 export default function HomeBox() {
     return (
         <>
-            <Box style={webStyle.mainBox}>
-                <Box style={webStyle.insideBox}>
-                    <Box style={webStyle.mainTwo}>
-                        <Box style={webStyle.yellowBox}>
-                            <img src={smaillImage} />
-                            <Typography style={webStyle.appSumo}>Now on appSumo</Typography>
-                            <Button style={webStyle.dealbtn}>
-                                Get Lifetime Deal
-                            </Button>
-                        </Box>
-
+            <HomeMain>
+                <Box style={webStyle.mainBox}>
+                    <Box style={webStyle.yellowBox}>
+                        <img src={smaillImage} />
+                        <Typography style={webStyle.appSumo}>Now on appSumo</Typography>
+                        <Button style={webStyle.dealbtn}>
+                            Get Lifetime Deal <span style={{ marginTop: "5px" }}><KeyboardArrowRightIcon /></span>
+                        </Button>
                     </Box>
                 </Box>
-            </Box>
-            <Box style={{ maxWidth: "659px", margin: "auto" }}>
-                <Typography style={webStyle.mainHeading}>
-                    Your second brain for maximizing productivity
-                </Typography>
-            </Box>
-            <Box style={{ maxWidth: "671px", margin: "auto" }}>
-                <Typography style={webStyle.smallHeading}>
-                    Afforai is an AI chatbot that searches, summarizes, and translates info from multiple sources to produce trustworthy research. Feed lengthy research documents to stacks of dry compliance requirements and extract the key findings you need.
-                </Typography>
-            </Box>
-            <HomeMain>
-                <Box style={{ margin: "auto", width: "816px" }}>
-                    <Box style={{ display: "flex", justifyContent: "space-between", marginTop: "35px" }}>
+                <Box style={{ maxWidth: "659px", marginLeft: "auto", marginRight: 'auto', marginTop: "40px" }}>
+                    <Typography style={webStyle.mainHeading}>
+                        Your second brain for maximizing productivity
+                    </Typography>
+                </Box>
+                <Box style={{ maxWidth: "671px", margin: "auto" }}>
+                    <Typography style={webStyle.smallHeading}>
+                        Afforai is an AI chatbot that searches, summarizes, and translates info from multiple sources to produce trustworthy research. Feed lengthy research documents to stacks of dry compliance requirements and extract the key findings you need.
+                    </Typography>
+                </Box>
+
+                <Box style={{ margin: "auto", width: "816px", overflow: "hidden" }}>
+                    <Box style={{ marginTop: "35px", display: "flex", justifyContent: "space-between" }}>
                         <Box style={webStyle.tickBox}>
                             <CheckIcon style={{ width: "16px", height: "16px" }} />
                             Summarize Key Findings
@@ -51,7 +48,6 @@ export default function HomeBox() {
                         </Box>
                     </Box>
                 </Box>
-
                 <Box style={{ display: "flex", marginTop: "35px", justifyContent: "center", alignItems: "center" }}>
                     <Button style={webStyle.tryfree}>
                         Try for free
@@ -61,34 +57,21 @@ export default function HomeBox() {
                     </Button>
 
                 </Box>
-
             </HomeMain>
-            <Box style={{ marginTop: "70px", top: "591px", left: "336px" ,position:"absolute"}}>
-                <Box style={{ margin: "auto", width: "1152px" }}>
+            <ImageBox>
+                <MainImage >
                     <img src={mainImage} style={{ width: "100%" }} />
-                </Box>
-            </Box>
+                </MainImage>
+            </ImageBox>
         </>
     )
 }
 const webStyle = {
     mainBox: {
-        width: "340px",
+        width: "352px",
         marginLeft: "auto",
         marginRight: "auto",
-        marginTop: "50px",
-        padding: "50px 60px"
-    },
-    insideBox: {
-        gap: "100px",
-        position: "relative",
-        overflow: "hidden",
-    },
-    mainTwo: {
-        gap: "32px",
-        lineHeight: "100%",
-        zIndex: 2,
-        alignItems: "center"
+        marginTop: "125px",
     },
     yellowBox: {
         display: "flex",
@@ -106,14 +89,14 @@ const webStyle = {
         justifyContent: "space-between"
     },
     dealbtn: {
-        padding: "6px 2px 6px 6px",
+        padding: "0px 2px 0px 6px",
         gap: "2px",
         borderRadius: "6px",
         border: "1px solid rgb(51, 51, 51)",
         color: "inherit",
         background: "linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50.04%, rgba(255, 255, 255, 0.5) 50.85%)",
         textTransform: "none",
-
+        fontWeight: 600
     },
     appSumo: {
         color: "rgb(51, 51, 51)",
@@ -180,6 +163,49 @@ const HomeMain = styled(Box)({
     zIndex: 1,
     bottom: "280px",
     borderRadius: "28px",
-    overflow: "hidden",
-    height: "500px"
+    height: "833px",
+    '@media (max-width: 1350px)': {
+        width: "1088px"
+    },
+    '@media (max-width: 1134px)': {
+        width: "953px"
+    },
+    '@media (max-width: 990px)': {
+        width: "827px"
+    },
+    '@media (max-width: 890px)': {
+        width: "769px",
+        overflow: "hidden"
+    },
+    '@media (max-width: 822px)': {
+        width: "676px",
+        overflow: "hidden"
+    },
+})
+const MainImage = styled(Box)({
+    margin: "auto",
+    width: "1152px",
+    '@media (max-width: 1350px)': {
+        width: "944px"
+    },
+    '@media (max-width: 1134px)': {
+        width: "820px"
+    },
+    '@media (max-width: 990px)': {
+        width: "722px"
+    },
+    '@media (max-width: 890px)': {
+        width: "700px"
+    },
+    '@media (max-width: 822px)': {
+        width: "588px"
+    },
+})
+const ImageBox = styled(Box)({
+    marginTop: "-285px",
+    marginLeft: "auto",
+    marginRight: "auto",
+    '@media (max-width: 890px)': {
+        marginTop: "-157px"
+    },
 })

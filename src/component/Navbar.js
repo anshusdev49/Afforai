@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
-import { logo } from "../assets/images"
+import { logo } from "../assets/assets"
 
 export default function Navbar() {
     return (
@@ -90,5 +90,20 @@ const NavbarBox = styled(Box)({
     borderColor: "rgb(209, 213, 219)",
     borderRadius: "16px",
     backdropFilter: "blur(16px)",
-    background: "rgba(250, 250, 250, 0.5)"
+    background: "rgba(250, 250, 250, 0.5)",
+    '@media (max-width: 1350px)': {
+        width: "1040px"
+      },
+      '@media (max-width: 1134px)': {
+        width: "901px"
+      },
+      '@media (max-width: 990px)': {
+        width: "820px"
+      },
+      '@media (max-width: 890px)': {
+        width: "700px"
+      },
+      '@media (max-width: 822px)': {
+        width: "655px"
+      },
 })
