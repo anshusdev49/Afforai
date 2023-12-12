@@ -1,6 +1,6 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import React from "react";
-import { smaillImage, background, mainImage } from "../assets/assets"
+import { smaillImage, background, mainImage, userImge } from "../assets/assets"
 import CheckIcon from '@mui/icons-material/Check';
 import styled from "styled-components";
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
@@ -63,6 +63,12 @@ export default function HomeBox() {
                     <img src={mainImage} style={{ width: "100%" }} />
                 </MainImage>
             </ImageBox>
+            <Box style={{ display: "flex", justifyContent: "center", alignItems: "center", marginTop: "80px", textAlign: "center" }}>
+                <Box>
+                    <Typography style={webStyle.userBox}>Loved by <span style={{color:"rgb(128, 54, 255)"}}>20,000+</span> users around the world</Typography>
+                        <img src={userImge} style={{ marginTop: "20px", width:"80%" }} />
+                </Box>
+            </Box>
         </>
     )
 }
@@ -151,6 +157,10 @@ const webStyle = {
         padding: "6px 28px",
         borderRadius: "12px",
         textTransform: "none"
+    },
+    userBox: {
+        color: "rgb(82, 82, 82)",
+        fontSize: "16px",
     }
 }
 const HomeMain = styled(Box)({
